@@ -17,3 +17,29 @@ function sayHello(input){
 function isFive(input){
     return true;
 }
+
+function isEven(input){
+    if(typeof input === "boolean"){
+        return false;
+    }else if(typeof input === ""){
+        return false;
+    }
+    else {
+        return input % 2 === 0;
+    }
+
+}
+
+
+function isVowel(input){
+    return input.toLowerCase() === a || input.toLowerCase() === e || input.toLowerCase() === i || input.toLowerCase() === o || input.toLowerCase() === u;
+}
+
+function add(x,y){
+    if(isNaN(x)=== true && y.isNaN()) {
+        return x + y;
+    }else{
+        return NaN;
+    }
+
+}
