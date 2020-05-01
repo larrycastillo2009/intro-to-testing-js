@@ -21,11 +21,11 @@ function isFive(input){
 function isEven(input){
     if(typeof input === "boolean"){
         return false;
-    }else if(typeof input === ""){
-        return false;
+    }else if(typeof parseFloat(input) === "number"){
+        return input % 2 === 0;
     }
     else {
-        return input % 2 === 0;
+        return false;
     }
 
 }
@@ -36,10 +36,10 @@ function isVowel(input){
 }
 
 function add(x,y){
-    if(isNaN(x)=== true && y.isNaN()) {
-        return x + y;
-    }else{
+    if(typeof x === NaN || typeof y === NaN) {
         return NaN;
+    }else{
+        return parseFloat(x) +parseFloat(y);
     }
 
 }

@@ -89,7 +89,7 @@ describe("isEven", function () {
         expect(isEven(false)).toBe(false);
     });
     it("should return false when passed nothing", function () {
-        expect(isEven).toBe(false);
+        expect(isEven()).toBe(false);
     });
 });
 
@@ -105,19 +105,29 @@ describe("isEven", function () {
 //     // });
 
 // });
-// describe("add", function () {
-//     it("should be a defined function", function () {
-//         expect(typeof add).toBe("function");
-//     });
-//     it("passing 2 and 3 should return 5", function () {
-//         expect(add(2,3)).toBe(5);
-//     });
-//     it("passing -3,-9 should return -12", function () {
-//         expect(add(-3,-9)).toBe(-12);
-//     });
-//     it("passing string 5,6 should return 11", function () {
-//         expect(add("5",6)).toBe(11);
-//     });
-//
-//
-// });
+describe("add", function () {
+    it("should be a defined function", function () {
+        expect(typeof add).toBe("function");
+    });
+    it("passing 2 and 3 should return 5", function () {
+        expect(add(2,3)).toBe(5);
+    });
+    it("passing -3,-9 should return -12", function () {
+        expect(add(-3,-9)).toBe(-12);
+    });
+    it("passing string 5,6 should return 11", function () {
+        expect(add("5",6)).toBe(11);
+    });
+    it("passing string -4,string 10 should return 6", function () {
+        expect(add("-4","10")).toBe(6);
+    });
+    it("passing string banana,string split should return NaN", function () {
+        expect(add("banana","split")).toBe(NaN);
+    });
+    it("passing 2, string split should return NaN", function () {
+        expect(add(2,"apples")).toBe(NaN);
+    });
+
+
+
+});
