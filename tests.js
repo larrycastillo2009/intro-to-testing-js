@@ -54,6 +54,9 @@ describe("isFive", function () {
     it("should return true when passed 5", function () {
             expect(isFive(5)).toBe(true);
     });
+    it("should return true when passed string 5", function () {
+            expect(isFive("5")).toBe(true);
+    });
 
 });
 
@@ -93,18 +96,37 @@ describe("isEven", function () {
     });
 });
 
-// describe("isVowel", function () {
-//     it("should be a defined function", function () {
-//         expect(typeof isVowel).toBe("function");
-//     });
-//     it("should return a boolean no matter what the input", function () {
-//         expect(typeof isVowel()).toBe("boolean");
-//     });
-//     // it("should return true when passed 5", function () {
-//     //     expect(isVowel(5)).toBe(true);
-//     // });
+describe("isVowel", function () {
+    it("should be a defined function", function () {
+        expect(typeof isVowel).toBe("function");
+    });
+    it("should return a boolean no matter what the input", function () {
+        expect(typeof isVowel()).toBe("boolean");
+    });
+    it("should return true when passed char a", function () {
+        expect(isVowel("a")).toBe(true);
+    });
+    it("should return true when passed char A", function () {
+        expect(isVowel("A")).toBe(true);
+    });
+    it("should return false when passed char y", function () {
+        expect(isVowel("y")).toBe(false);
+    });
+    it("should return false when passed 4", function () {
+        expect(isVowel(4)).toBe(false);
+    });
+    it("should return false when passed boolean", function () {
+        expect(isVowel(true)).toBe(false);
+    });
+    it("should return true when passed string bananna", function () {
+        expect(isVowel("bananna")).toBe(false);
+    });
+    it("should return false when passed nothing", function () {
+        expect(isVowel()).toBe(false);
+    });
 
-// });
+
+});
 describe("add", function () {
     it("should be a defined function", function () {
         expect(typeof add).toBe("function");
@@ -122,10 +144,10 @@ describe("add", function () {
         expect(add("-4","10")).toBe(6);
     });
     it("passing string banana,string split should return NaN", function () {
-        expect(add("banana","split")).toBe(NaN);
+        expect(add("banana","split")).toBe("not a number");
     });
     it("passing 2, string split should return NaN", function () {
-        expect(add(2,"apples")).toBe(NaN);
+        expect(add(2,"apples")).toBe("not a number");
     });
 
 

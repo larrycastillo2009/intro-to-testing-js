@@ -15,7 +15,7 @@ function sayHello(input){
 }
 
 function isFive(input){
-    return true;
+    return parseFloat(input) === 5;
 }
 
 function isEven(input){
@@ -32,12 +32,31 @@ function isEven(input){
 
 
 function isVowel(input){
-    return input.toLowerCase() === a || input.toLowerCase() === e || input.toLowerCase() === i || input.toLowerCase() === o || input.toLowerCase() === u;
+    if(typeof input === "string"){
+    if(input.toLowerCase() === "a" || input.toLowerCase() === "e" || input.toLowerCase() === "i" || input.toLowerCase() === "o" || input.toLowerCase() === "u") {
+        return true;
+    }else{
+        return false;
+    }
+    }else if (input === null){
+        return false;
+    }else if(typeof input === "boolean"){
+        return false;
+    }else if(typeof input === "number"){
+        return false;
+    }
+    else{
+        return false;
+    }
 }
 
+
+function isNumeric(n) {
+    return !isNaN(parseFloat(n)) && isFinite(n);
+}
 function add(x,y){
-    if(typeof x === NaN || typeof y === NaN) {
-        return NaN;
+    if(!isNumeric(x) || !isNumeric(y)) {
+        return "not a number";
     }else{
         return parseFloat(x) +parseFloat(y);
     }
